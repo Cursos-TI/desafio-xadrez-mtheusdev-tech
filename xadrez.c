@@ -24,6 +24,7 @@ int main() {
      printf("1. Torre \n");
      printf("2. Bispo \n");
      printf("3. Rainha \n");
+     printf("4. Cavalo \n");
      printf("Escolha uma peça:");
      scanf("%d", &play);
 
@@ -55,6 +56,40 @@ int main() {
             printf("%d - Esquerda.\n", peça);
         }
         break;
+    
+    case 4:
+       printf("Escolha uma direção: \n");
+       printf("1. Horizontal \n");
+       printf("2. Vertical \n");
+       printf(">:");
+       scanf("%d", &peça);
+
+       switch (peça)
+       {
+        case 1:
+           for ( int i = 1; i <= 1; i++){
+             for ( int j = 1; j <= 2; j++) {
+                printf("%d - PARA CIMA! \n", j);
+             } printf("3 - Esquerda \n");
+           }
+           
+        break;
+
+        case 2:
+           for (int i = 1; i <= 1; i++){
+             for (int j = 1; j <= 2; j++){
+                printf("%d Para o lado! \n", j);
+            } printf("3 - Esquerda \n");
+            
+           }
+        break;   
+       
+       default:
+            printf("Opção Inválida!!!................");
+        break;
+       }
+       
+    break;
      default:
           printf("Opção inválida!!! \n");
         break;
