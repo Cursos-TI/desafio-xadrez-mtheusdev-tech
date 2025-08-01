@@ -1,8 +1,25 @@
 #include <stdio.h>
 
 // Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+void mtorre(int peça) {
+  if (peça > 0) {
+    mtorre(peça - 1);
+    printf("%d - Direita. \n", peça);
+  }
+}
+void mbispo(int peça) {
+  if (peça > 0){
+    mbispo(peça - 1);
+    printf("%d - Cima, direita. \n", peça);
+  }
+}
+void mrainha(int peça) {
+  if (peça > 0){
+    mrainha(peça - 1);
+    printf("%d - Esquerda. \n", peça);
+  }
+}
+
 
 int main() {
 
@@ -33,28 +50,19 @@ int main() {
      case 1:
         printf("Número de movimentos:");
         scanf("%d", &peça);
-        for ( int i = 1 ; i <= peça; i++)
-        {
-            printf("%d - Direita.\n", i);     
-        }
+        mtorre(peça);
         break;
 
     case 2:
         printf("Número de movimentos:");
         scanf("%d", &peça);
-          for ( int i = 1; i <= peça; i++)
-          {
-            printf("%d - Cima, Direita. \n", i);
-          } 
+        mbispo(peça);
         break;
     
     case 3:
         printf("Número de movimentos:");
         scanf("%d", &peça);
-        for ( int i = 1; i <= peça; i++)
-        {
-            printf("%d - Esquerda.\n", peça);
-        }
+        mrainha(peça);
         break;
     
     case 4:
@@ -70,7 +78,7 @@ int main() {
            for ( int i = 1; i <= 1; i++){
              for ( int j = 1; j <= 2; j++) {
                 printf("%d - PARA CIMA! \n", j);
-             } printf("3 - Esquerda \n");
+             } printf("3 - Direita. \n");
            }
            
         break;
@@ -79,7 +87,7 @@ int main() {
            for (int i = 1; i <= 1; i++){
              for (int j = 1; j <= 2; j++){
                 printf("%d Para o lado! \n", j);
-            } printf("3 - Esquerda \n");
+            } printf("3 - Direita. \n");
             
            }
         break;   
@@ -101,6 +109,7 @@ int main() {
      printf("1. Torre: Move-se em linha reta horizontalmente ou verticalmente. Até 5 casas! \n");
      printf("2. Bispo: Move-se na diagonal. Até 5 casas! \n");
      printf("3. Rainha: Move-se em todas as direções. Até 8 casas! \n");
+     printf("4.  O movimento do Cavalo agora será para cima e para a direita, em L (duas casas para cima e uma para a direita). \n");
      break;
 
      case 3:
