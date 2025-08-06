@@ -23,7 +23,7 @@ void mrainha(int peça) {
 
 int main() {
 
-    int option, play, peça;
+    int option, play, peça, mcavalo;
 
     do
     {
@@ -69,7 +69,28 @@ int main() {
        printf("Escolha uma direção: \n");
        printf("1. Passo em L \n");
        printf(">:");
-       scanf("%d", &peça);
+       scanf("%d", &mcavalo);
+
+       switch (mcavalo)
+       {
+       case 1:
+       printf("Movimento do Cavalo: 2 casas para Cima, 1 para Direita \n"); 
+        int passos_verticais_completos = 0;   
+       for (int total_passos = 1; total_passos <= 3; total_passos++) {     
+           if (passos_verticais_completos < 2) { 
+           printf("%d - Cima \n", total_passos); 
+           passos_verticais_completos++; 
+           for (int k = 0; k < 1; k++) {              }        
+          } else {   
+           printf("%d - Direita \n", total_passos);         
+             if (total_passos == 3) 
+             break;        } } 
+
+       default: 
+       continue;
+        break; 
+      }
+
 
        switch (peça)
        {
@@ -96,15 +117,7 @@ int main() {
                  i_rainha++;  
                  } while (i_rainha <= peça);   
                   break; }
-       case 4:
-       printf("Movimento do Cavalo: 2 casas para Cima, 1 para Direita \n");    
-       for (int passo_vertical = 1; passo_vertical <= 2; passo_vertical++) { 
-         printf("%d - Cima \n", passo_vertical);  }    
-         int passo_horizontal = 1;    
-         while (passo_horizontal <= 1) {  
-                  printf("%d - Direita \n", passo_horizontal);  
-                        passo_horizontal++;  }  
-                          break;
+
        default:
             printf("Opção Inválida!!!................ \n");
         break;
