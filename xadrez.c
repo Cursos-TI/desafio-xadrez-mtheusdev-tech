@@ -67,7 +67,7 @@ int main() {
     
     case 4:
        printf("Escolha uma direção: \n");
-       printf("1. Passo em L \n");
+       printf("1. 2 Cima, 1 Direita \n");
        printf(">:");
        scanf("%d", &mcavalo);
 
@@ -79,17 +79,16 @@ int main() {
        for (int total_passos = 1; total_passos <= 3; total_passos++) {     
            if (passos_verticais_completos < 2) { 
            printf("%d - Cima \n", total_passos); 
-           passos_verticais_completos++; 
-           for (int k = 0; k < 1; k++) {              }        
+           passos_verticais_completos++;      
           } else {   
            printf("%d - Direita \n", total_passos);         
              if (total_passos == 3) 
              break;        } } 
+             break;
 
        default: 
-       continue;
-        break; 
-      }
+        printf("Opção Inválida para o Cavalo!\n"); 
+      } break;
 
 
        switch (peça)
@@ -117,12 +116,11 @@ int main() {
                  i_rainha++;  
                  } while (i_rainha <= peça);   
                   break; }
-
-       default:
-            printf("Opção Inválida!!!................ \n");
+                 
+        default:
+          printf("Opção inválida!!! \n");
         break;
-       }
-       
+                }
     break;
      default:
           printf("Opção inválida!!! \n");
