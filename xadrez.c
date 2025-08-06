@@ -62,11 +62,13 @@ int main() {
                         break;
 
                     case 4:
-                        printf("\nEscolha uma direção:\n");
-                        printf("1. Cima e Direita (em L)\n");
-                        printf("2. Baixo e Esquerda (em L)\n");
-                        printf("Opção: ");
-                        scanf("%d", &peça);
+                        printf("Movimento do Cavalo: L (2 Cima, 1 Direita) \n");
+                        for (int passo_principal = 1; passo_principal <= 3; passo_principal++)
+                         {    if (passo_principal <= 2) {        printf("%d - Baixo \n", passo_principal);
+                                 for (int sub_passo = 1; sub_passo <= 1; sub_passo++);   
+                                 } else { printf("%d - Esquerda \n", passo_principal);  
+                                              }}
+                        break;
 
                         switch (peça) {
                             case 1:
@@ -93,16 +95,6 @@ int main() {
                                 } while (i_rainha <= 5);
                                 break;
                             }
-
-                            case 4:
-                                printf("Movimento do Cavalo: 2 casas para baixo, 1 para esquerda\n");
-                                for (int passo_vertical = 1; passo_vertical <= 2; passo_vertical++) {
-                                    printf("%d - Baixo\n", passo_vertical);
-                                }
-                                for (int passo_horizontal = 1; passo_horizontal <= 1; passo_horizontal++) {
-                                    printf("%d - Esquerda\n", passo_horizontal);
-                                }
-                                break;
 
                             default:
                                 printf("Direção inválida!\n");
